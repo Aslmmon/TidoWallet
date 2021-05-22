@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <Button
+        android:id="@+id/InProgress"
+        style="@style/Dialog_style"
+        android:text="@string/in_progress_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/Shipped"
+        style="@style/Dialog_style"
+        android:text="@string/shipped_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/InProgress" />
+
+    <Button
+        android:id="@+id/Delivered"
+        style="@style/Dialog_style"
+        android:text="@string/deliverd_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Shipped" />
+
+    <Button
+        style="@style/Dialog_style"
+        android:text="@string/canceld_title"
+        android:id="@+id/Cancelld"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/Delivered" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

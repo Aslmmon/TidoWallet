@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/floria_complain_group_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:constraint_referenced_ids="tv_user_name,iv_user_complain" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/floria_user_group_"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        app:constraint_referenced_ids="tv_floria_name,iv_floria_complain" />
+
+    <TextView
+        android:id="@+id/tv_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/iv_user_complain"
+        app:layout_constraintStart_toEndOf="@id/iv_user_complain"
+        app:layout_constraintTop_toTopOf="@id/iv_user_complain"
+        tools:text="User Name USER " />
+
+    <TextView
+        android:id="@+id/tv_floria_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toStartOf="@id/iv_floria_complain"
+        app:layout_constraintTop_toTopOf="@id/iv_floria_complain"
+        tools:text="User Floria " />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="@color/colorGrayWhite"
+        app:cardCornerRadius="@dimen/_10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:cardUseCompatPadding="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/iv_user_complain">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tv_date_comment"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:textColor="@color/colorgray"
+                app:layout_constraintBottom_toTopOf="@id/tv_complain_description"
+                android:textSize="8sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="22 Jun 2021" />
+
+            <TextView
+                android:id="@+id/tv_complain_description"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="10sp"
+                android:layout_marginBottom="@dimen/_8dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/tv_date_comment"
+                app:layout_constraintTop_toBottomOf="@id/tv_date_comment"
+                tools:text="the prices are much higher than requested" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_user_complain"
+        android:layout_width="@dimen/_25dp"
+        android:layout_height="@dimen/_25dp"
+        android:src="@drawable/ic_placeholderimage"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/iv_floria_complain"
+        android:layout_width="@dimen/_25dp"
+        android:layout_height="@dimen/_25dp"
+        android:src="@drawable/ic_floria"
+        app:layout_constraintBottom_toTopOf="@id/card"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,3 +1,4 @@
 <resources>
-    <string name="app_name">TidoWallet</string>
+    <string name="app_name">Tido Wallet</string>
+    <string name="tido_wallet_title" translatable="false">Tido Wallet</string>
 </resources>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="permission_rationale_location">Access to the location service is required to demonstrate the \'my location\' feature, which shows your current location on the map.</string>
+    <string name="location_permission_denied">This sample requires location permission to enable the \'my location\' layer. Please try again and grant access to use the location.\nIf the permission has been permanently denied, it can be enabled from the System Settings &gt; Apps &gt; \'Google Maps API Demos\'.</string>
+    <string name="permission_required_toast">Location permission is required for this demo.</string>
+    <string name="welcome_to_floria_title">Welcome to Floria</string>
+    <string name="add_product_title"> إضافة منتج</string>
+    <string name="price">السعر</string>
+    <string name="Arabic">العربية</string>
+    <string name="English">English</string>
+    <string name="money">الحسابات</string>
+    <string name="products">المنتجات</string>
+    <string name="orders">الطلبات</string>
+    <string name="settings">الإعدادات</string>
+    <string name="flower_types">أنواع الورد</string>
+    <string name="title_complain">Enter Title more than 3 characters</string>
+    <string name="message_complain">  فضلاً أدخل على الأقل 3 حروف</string>
+    <string name="reply_title">أكتب ردك هنا من فضلك  </string>
+
+    <string name="apartment_number_title">Apartment number </string>
+    <string name="in_progress_title">جاري الطلب</string>
+    <string name="shipped_title">جاهز للتوصيل</string>
+    <string name="deliverd_title">تم التوصيل </string>
+    <string name="canceld_title">الغاء </string>
+    <string name="fawry">فوري</string>
+    <string name="cash">كاش</string>
+    <string name="visa">فيزا</string>
+    <string name="yes">نعم</string>
+    <string name="no">لا</string>
+    <string name="change_language"> تغيير اللغة</string>
+    <string name="sure">هل أنت متأكد, سيتم إعادة  تشغيل التطبيق في حاله الموافقة  ؟</string>
+
+    <string name="are_you_sure_you_want_to_cancel_order_title">هل أنت متأكد من الغاء الطلب الخاص بك ؟</string>
+    <string name="no_title">لا</string>
+    <string name="yes_title">نعم</string>
+    <string name="apartment_number">رقم الشقه</string>
+
+    <string name="status">الحاله</string>
+    <string name="total_orders_by_visa_title">Total Orders By visa</string>
+    <string name="floria">فلوريا</string>
+    <string name="you">أنت </string>
+    <string name="your_salary_from_order_title">Your Salary from Order</string>
+    <string name="log_out">صفحة تسجيل الخروج </string>
+    <string name="are_you_sure">هل أنت متأكد أنك تريد تسجيل الخروج ؟</string>
+    <string name="insert_number">فضلاً قم بإدخال رقم واحد علي الأقل</string>
+
+</resources>

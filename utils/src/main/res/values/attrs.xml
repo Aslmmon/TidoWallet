@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="logo_title">
+        <attr name="android:text"></attr>
+    </declare-styleable>
+
+    <declare-styleable name="btn_custom">
+        <attr name="android:text" />
+        <attr name="android:src" />
+        <attr name="colorNeeded" format="integer" />
+        <attr name="isGray" format="boolean" />
+
+    </declare-styleable>
+
+
+    <declare-styleable name="order_custom">
+        <attr name="android:text" />
+        <attr name="isGreenColored" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="custom_orders">
+        <attr name="android:src" />
+        <attr name="order_title" format="string" />
+        <attr name="order_price" format="string" />
+        <attr name="order_orders" format="string" />
+        <attr name="order_salary" format="string" />
+        <attr name="isGreen" format="boolean" />
+
+    </declare-styleable>
+
+    <declare-styleable name="img_car">
+        <attr name="header" format="string" />
+        <attr name="footer" format="string" />
+
+    </declare-styleable>
+
+    <declare-styleable name="custom_order_home">
+        <attr name="isGreenOrder" format="boolean" />
+        <attr name="android:text" />
+
+    </declare-styleable>
+
+    <declare-styleable name="edit_Text">
+        <attr name="android:text" />
+        <attr name="android:hint" />
+        <attr name="android:inputType" />
+        <attr name="android:maxLength" />
+        <attr name="maxLength" format="integer"/>
+        <attr name="isMandatory" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="custom_complain">
+        <attr name="fromFloria" format="boolean" />
+    </declare-styleable>
+
+</resources>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/image_type_payment"
+        android:layout_width="@dimen/_50dp"
+        android:layout_height="@dimen/_50dp"
+        android:src="@drawable/ic_credit"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_orders"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/total_orders_by_visa_title"
+        android:layout_marginTop="@dimen/_5dp"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/image_type_payment"
+        app:layout_constraintStart_toStartOf="@id/image_type_payment"
+        app:layout_constraintTop_toBottomOf="@id/image_type_payment" />
+
+    <TextView
+        android:id="@+id/tv_price"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5dp"
+        android:background="@drawable/bg_colored_primary"
+        android:gravity="center"
+        android:padding="@dimen/_8dp"
+        android:text="5050 EGP"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_orders" />
+
+    <TextView
+        android:id="@+id/tv_total_orders_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5dp"
+        android:text="Total Orders 350 order"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="@id/tv_price"
+        app:layout_constraintStart_toStartOf="@id/tv_price"
+        app:layout_constraintTop_toBottomOf="@id/tv_price" />
+
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_5dp"
+        android:background="@drawable/bg_colored_primary"
+        android:text="5050 EGP"
+        android:id="@+id/tv_salary"
+        android:gravity="center"
+        android:layout_margin="@dimen/_5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_total_orders_title" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
