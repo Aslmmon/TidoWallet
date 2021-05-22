@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <declare-styleable name="edit_Text">
+        <attr name="android:text" />
+        <attr name="android:hint" />
+        <attr name="android:inputType" />
+        <attr name="android:maxLength" />
+        <attr name="maxLength" format="integer"/>
+        <attr name="isMandatory" format="boolean"/>
+    </declare-styleable>
+    <declare-styleable name="custom_complain">
+        <attr name="fromFloria" format="boolean" />
+    </declare-styleable>
+</resources>

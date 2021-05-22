@@ -1,4 +1,15 @@
 <resources>
     <string name="app_name">Tido Wallet</string>
     <string name="tido_wallet_title" translatable="false">Tido Wallet</string>
+    <string name="sign_in_title">Sign In</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mobile_number_title">Mobile Number</string>
+    <string name="password_title">Password</string>
+    <string name="dont_title">Don\'t have account ?  <font color='#002171'> Sign Up</font></string>
+    <string name="write_your_number_title">Write Your number</string>
+    <string name="verify_mobile_number_titlee">Verify Mobile Number</string>
+    <string name="enter_code_sent_to_you_title">Enter Code Sent to you</string>
+    <string name="enter_password_title">Enter Password</string>
+    <string name="verify_code">Verify Code</string>
+    <string name="register_title">Register</string>
 </resources>

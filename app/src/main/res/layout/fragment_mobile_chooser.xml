@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".features.Login.fragments.register.enter_mobile.MobileChooserFragment">
+
+
+    <com.tidow.tidowallet.custom.CustomTitleEditText
+        android:id="@+id/custom_password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="@string/write_your_number_title" />
+
+    <com.google.android.material.button.MaterialButton
+        app:cornerRadius="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/verify_mobile_number_titlee"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/custom_password"
+        android:layout_marginTop="20dp"
+        android:id="@+id/btn_verify"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/btnStyle" />
+
+
+</LinearLayout>
