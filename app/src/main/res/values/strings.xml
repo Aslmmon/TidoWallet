@@ -12,4 +12,7 @@
     <string name="enter_password_title">Enter Password</string>
     <string name="verify_code">Verify Code</string>
     <string name="register_title">Register</string>
+    <string name="enter_email_title">Enter Email</string>
+    <string name="email_title">Email</string>
+    <string name="sign_out_title">Sign Out</string>
 </resources>

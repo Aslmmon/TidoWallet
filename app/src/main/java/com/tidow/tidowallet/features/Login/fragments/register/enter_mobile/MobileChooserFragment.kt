@@ -29,7 +29,6 @@ class MobileChooserFragment : Fragment() {
     lateinit var firebaseAuth: FirebaseAuth
 
     val sharedPrefrenceEditor: SharedPreferences.Editor by inject()
-    val sharedPrefrence: SharedPreferences by inject()
 
 
     override fun onCreateView(
@@ -52,7 +51,9 @@ class MobileChooserFragment : Fragment() {
 
         binding.btnVerify.setOnClickListener {
 
-            val mobileNumber = binding.customMobileNumber.editTextDescription.text.toString()
+//            val mobileNumber = binding.customMobileNumber.editTextDescription.text.toString()
+            val mobileNumber = "+20${binding.customMobileNumber.editTextDescription.text}"
+
             Toast.makeText(requireContext(), mobileNumber, Toast.LENGTH_SHORT).show()
 
             val options = PhoneAuthOptions.newBuilder(firebaseAuth)
@@ -83,8 +84,8 @@ class MobileChooserFragment : Fragment() {
                         super.onCodeSent(verificationId, token)
                         Log.i("firebase", "onCodeSent verificaion id :$verificationId")
                         Log.i("firebase", "onCodeSent token :$token")
-                        sharedPrefrenceEditor.putString(VERIFICATION_CODE, verificationId)
-                        sharedPrefrenceEditor.putString(TOKEN, token.toString())
+                        sharedPrefrenceEditor.putString(VERIFICATION_CODE, verificationId).apply()
+                        sharedPrefrenceEditor.putString(TOKEN, token.toString()).apply()
 
                         findNavController().navigate(R.id.goToVerify)
                     }

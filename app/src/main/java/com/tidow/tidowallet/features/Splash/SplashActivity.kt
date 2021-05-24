@@ -1,10 +1,10 @@
 package com.tidow.tidowallet.features.Splash
 
-import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.tidow.tidowallet.R
-import com.tidow.tidowallet.features.Login.LoginActivity
+import com.tidow.tidowallet.custom.Navigation
+import com.tidow.tidowallet.custom.SPLASH_TIMEOUT
 import com.tidow.tidowallet.setLocale
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.delay
@@ -17,8 +17,8 @@ class SplashActivity : AppCompatActivity(R.layout.activity_splash) {
         setLocale(Locale.getDefault().language)
 
         GlobalScope.launch {
-            delay(3000L)
-            startActivity(Intent(this@SplashActivity, LoginActivity::class.java))
+            delay(SPLASH_TIMEOUT)
+            Navigation.goToLoginActivity(this@SplashActivity)
         }
     }
 }
