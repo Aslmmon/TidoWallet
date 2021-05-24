@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="sign_in_title">تسجيل الدخول</string>
+    <string name="mobile_number_title">رقم الهاتف</string>
+    <string name="password_title">كلمه المرور</string>
+    <string name="dont_title">لا تمتلم حساب ؟   <font color='#002171'> قم بالتسجيل</font></string>
+    <string name="write_your_number_title">رقم الهاتف</string>
+    <string name="verify_mobile_number_titlee">التحقق من رقم الهاتف </string>
+    <string name="enter_code_sent_to_you_title">أدخل الرمز المرسل اليك</string>
+    <string name="enter_password_title">رقم المرور</string>
+    <string name="verify_code">التحقق من الرمز</string>
+    <string name="register_title">التسجيل</string>
+</resources>

@@ -9,7 +9,7 @@
 
 
     <com.tidow.tidowallet.custom.CustomTitleEditText
-        android:id="@+id/custom_password"
+        android:id="@+id/custom_mobile_number"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:text="@string/verify_mobile_number_titlee"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/custom_password"
+        app:layout_constraintTop_toBottomOf="@id/custom_mobile_number"
         android:layout_marginTop="20dp"
         android:id="@+id/btn_verify"
         app:layout_constraintEnd_toEndOf="parent"
