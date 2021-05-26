@@ -15,4 +15,9 @@
     <string name="enter_email_title">Enter Email</string>
     <string name="email_title">Email</string>
     <string name="sign_out_title">Sign Out</string>
+    <string name="enter_mobile">Enter valid  number please</string>
+    <string name="email_not_empty">Enter your email</string>
+    <string name="password_not_empty">Enter Password Please</string>
+    <string name="password_not_less_than_6">Password Not less than 8 characters</string>
+    <string name="enter_valid_Code">Enter code sent to you</string>
 </resources>

@@ -10,4 +10,13 @@
     <string name="enter_password_title">رقم المرور</string>
     <string name="verify_code">التحقق من الرمز</string>
     <string name="register_title">التسجيل</string>
+
+    <string name="enter_email_title">أدخل البريد الالكتروني من فضلك</string>
+    <string name="email_title">البريد الالكتروني</string>
+    <string name="sign_out_title">تسجيل الخروج</string>
+    <string name="enter_mobile">أدخل رقم الهاتف من فضلك</string>
+    <string name="email_not_empty">أدخل البريد الالكتروني </string>
+    <string name="password_not_empty">أدخل كلمة المرور من فضلك</string>
+    <string name="password_not_less_than_6">رقم المرور ليس أقل من 8 أرقام</string>
+    <string name="enter_valid_Code">أدخل الرمز من فضلك</string>
 </resources>

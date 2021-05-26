@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:inputType="number"
-        android:maxLength="15"
+        android:maxLength="11"
         android:text="@string/write_your_number_title" />
 
     <com.google.android.material.button.MaterialButton
@@ -28,6 +28,16 @@
         android:id="@+id/btn_verify"
         app:layout_constraintEnd_toEndOf="parent"
         style="@style/btnStyle" />
+
+
+    <ProgressBar
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:gravity="center"
+        android:id="@+id/progres"
+        android:visibility="gone"
+        android:layout_gravity="center"
+        />
 
 
 </LinearLayout>

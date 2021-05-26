@@ -70,5 +70,8 @@ dependencies {
     // Koin main features for Android (Scope,ViewModel ...)
     implementation "io.insert-koin:koin-android:3.0.2"
 
+    implementation 'com.mobsandgeeks:android-saripaar:2.0.3'
+
+
 
 }
