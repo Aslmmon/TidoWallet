@@ -46,7 +46,7 @@ class MobileChooserFragment : Fragment() {
         firebaseAuth.useAppLanguage()
 
 
-        requireActivity().findViewById<TextView>(R.id.tv_login).text = resources.getString(R.string.register_title)
+    //    requireActivity().findViewById<TextView>(R.id.tv_login).text = resources.getString(R.string.register_title)
 
         binding.btnVerify.setOnClickListener {
             val mobileNumberEnterd = binding.customMobileNumber.editTextDescription.text

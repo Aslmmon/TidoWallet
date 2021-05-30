@@ -49,7 +49,7 @@ class SignInFragment : Fragment(), Validator.ValidationListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        requireActivity().findViewById<TextView>(R.id.tv_login).text = resources.getString(R.string.sign_in_title)
+       // requireActivity().findViewById<TextView>(R.id.tv_login).text = resources.getString(R.string.sign_in_title)
         emailEditText = binding.customEmail.editTextDescription
         passwordEditText = binding.customPassword.editTextDescription
 
