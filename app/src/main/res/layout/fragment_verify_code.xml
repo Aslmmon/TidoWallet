@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -8,10 +8,29 @@
     android:orientation="vertical"
     tools:context=".features.Login.fragments.register.verify_code.VerifyCodeFragment">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="@string/create_account_to_continue_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textStyle="bold"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/tajawal_bold"
+        android:textColor="@color/colorDark"
+        android:id="@+id/tv_register"
+        android:textSize="24sp"
+        />
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
         android:text="@string/enter_code_sent_to_you_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_register"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:id="@+id/tv_choose"
         />
 
     <com.chaos.view.PinView
@@ -27,6 +46,9 @@
         android:cursorVisible="true"
         app:cursorColor="@color/colorLight"
         style="@style/PinWidget.PinView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_choose"
+        app:layout_constraintEnd_toEndOf="parent"
         />
 
     <com.google.android.material.button.MaterialButton
@@ -34,12 +56,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/verify_code"
-
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/custom_password"
+        app:layout_constraintTop_toBottomOf="@id/pin_code"
         android:layout_marginTop="20dp"
         android:id="@+id/btn_verify_code"
         app:layout_constraintEnd_toEndOf="parent"
-        style="@style/btnStyle" />
+        style="?attr/materialButtonOutlinedStyle"
+        android:textColor="@color/white"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:backgroundTint="@color/colorDark"
 
-</LinearLayout>
+
+
+
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

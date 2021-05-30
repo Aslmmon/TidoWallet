@@ -14,6 +14,7 @@ import com.tidow.tidowallet.R
 class CustomTitleEditText(context: Context, attrs: AttributeSet) : ConstraintLayout(context, attrs) {
     val editTextTile: TextView
     val editTextDescription : EditText
+    val textInputLayout:TextInputLayout
 
     init {
         inflate(context, R.layout.custom_title_edit, this)
@@ -25,7 +26,8 @@ class CustomTitleEditText(context: Context, attrs: AttributeSet) : ConstraintLay
          val NAME_SPACE = "http://schemas.android.com/apk/res/android"
         val maxLength: Int = attrs.getAttributeIntValue(NAME_SPACE, "maxLength", 50)
         editTextTile.text = title ?: "Not Specified"
-        findViewById<TextInputLayout>(R.id.til_ed).hint = title ?: "Not Specified"
+        textInputLayout =findViewById<TextInputLayout>(R.id.til_ed)
+        textInputLayout.hint = title ?: "Not Specified"
         inputType.let { editTextDescription.inputType = it }
         editTextDescription.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(maxLength))
 

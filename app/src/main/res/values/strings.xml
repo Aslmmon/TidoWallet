@@ -6,7 +6,7 @@
     <string name="mobile_number_title">Mobile Number</string>
     <string name="password_title">Password</string>
     <string name="dont_title">Don\'t have account ?  <font color='#002171'> Sign Up</font></string>
-    <string name="write_your_number_title">Write Your number</string>
+    <string name="write_your_number_title">Write Number in format 01xxxxx</string>
     <string name="verify_mobile_number_titlee">Verify Mobile Number</string>
     <string name="enter_code_sent_to_you_title">Enter Code Sent to you</string>
     <string name="enter_password_title">Enter Password</string>
@@ -22,4 +22,5 @@
     <string name="enter_valid_Code">Enter code sent to you</string>
     <string name="welcome_title">Welcome</string>
     <string name="login_to_continue_title">Login to continue</string>
+    <string name="create_account_to_continue_title">Create Account </string>
 </resources>

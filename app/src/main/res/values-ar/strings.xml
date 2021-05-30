@@ -19,4 +19,7 @@
     <string name="password_not_empty">أدخل كلمة المرور من فضلك</string>
     <string name="password_not_less_than_6">رقم المرور ليس أقل من 8 أرقام</string>
     <string name="enter_valid_Code">أدخل الرمز من فضلك</string>
+    <string name="welcome_title">أهلا</string>
+    <string name="login_to_continue_title">تسجيل الدخول</string>
+    <string name="create_account_to_continue_title">تسجيل حساب </string>
 </resources>
