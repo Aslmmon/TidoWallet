@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_nav.xml"
+    app:startDestination="@id/money_fragment">
+
+    <fragment
+        android:id="@+id/money_fragment"
+        android:name="com.tidow.tidowallet.features.main.fragments.MoneyFragment"
+        android:label="fragment_money"
+        tools:layout="@layout/fragment_money" />
+    <fragment
+        android:id="@+id/qrCodeFragment"
+        android:name="com.tidow.tidowallet.features.main.fragments.QrCodeFragment"
+        android:label="fragment_qr_code"
+        tools:layout="@layout/fragment_qr_code" />
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.tidow.tidowallet.features.main.fragments.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
+    <fragment
+        android:id="@+id/trans_fragment"
+        android:name="com.tidow.tidowallet.features.main.fragments.TransactionsFragment"
+        android:label="fragment_transactions"
+        tools:layout="@layout/fragment_transactions" />
+</navigation>

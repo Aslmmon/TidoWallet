@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/money_fragment"
+        android:title="@string/money"
+        android:icon="@drawable/wallet"/>
+
+    <item
+        android:id="@+id/qrCodeFragment"
+        android:title="@string/qr_code_title"
+        android:icon="@drawable/wallet"/>
+
+
+    <item
+        android:id="@+id/trans_fragment"
+        android:title="@string/transactions"
+        android:icon="@drawable/wallet"/>
+
+
+    <item
+        android:id="@+id/settingsFragment"
+        android:title="@string/settings"
+        android:icon="@drawable/wallet"/>
+</menu>

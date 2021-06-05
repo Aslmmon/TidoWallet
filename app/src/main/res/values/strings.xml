@@ -23,4 +23,10 @@
     <string name="welcome_title">Welcome</string>
     <string name="login_to_continue_title">Login to continue</string>
     <string name="create_account_to_continue_title">Create Account </string>
+    <string name="money">Wallet</string>
+    <string name="qr_code_title">Qr Code</string>
+    <string name="transactions">Transactions</string>
+    <string name="settings">Settings</string>
+    <string name="transactions_here_title">Transactions here</string>
+    <string name="settings_title">Settings</string>
 </resources>
