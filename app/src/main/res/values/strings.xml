@@ -29,4 +29,12 @@
     <string name="settings">Settings</string>
     <string name="transactions_here_title">Transactions here</string>
     <string name="settings_title">Settings</string>
+    <string name="current_balance_title">Current Balance</string>
+    <string name="withdraw_title">WithDraw</string>
+    <string name="_5000_egp_title">5000 EGP</string>
+    <string name="transaction_history_title">Transaction History</string>
+    <string name="change_language_title">Change Language</string>
+    <string name="arabic_title">العربية</string>
+    <string name="english_title">English</string>
+    <string name="change_lanugage_title">Change Lanugage</string>
 </resources>
