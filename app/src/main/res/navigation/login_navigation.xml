@@ -12,7 +12,9 @@
         tools:layout="@layout/fragment_sign_in" >
         <action
             android:id="@+id/goToChooseMobile"
-            app:destination="@id/mobileChooserFragment" />
+            app:destination="@id/mobileChooserFragment"
+            app:popUpTo="@id/mobileChooserFragment"
+            app:popUpToInclusive="true" />
     </fragment>
     <fragment
         android:id="@+id/mobileChooserFragment"

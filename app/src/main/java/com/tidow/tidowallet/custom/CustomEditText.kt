@@ -7,6 +7,7 @@ import android.view.inputmethod.EditorInfo
 import android.widget.EditText
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
 import com.tidow.tidowallet.R
 
@@ -27,7 +28,7 @@ class CustomTitleEditText(context: Context, attrs: AttributeSet) : ConstraintLay
         val maxLength: Int = attrs.getAttributeIntValue(NAME_SPACE, "maxLength", 50)
         editTextTile.text = title ?: "Not Specified"
         textInputLayout =findViewById<TextInputLayout>(R.id.til_ed)
-        textInputLayout.hint = title ?: "Not Specified"
+        findViewById<TextInputEditText>(R.id.ed_data).hint = title ?: "Not Specified"
         inputType.let { editTextDescription.inputType = it }
         editTextDescription.filters = arrayOf<InputFilter>(InputFilter.LengthFilter(maxLength))
 

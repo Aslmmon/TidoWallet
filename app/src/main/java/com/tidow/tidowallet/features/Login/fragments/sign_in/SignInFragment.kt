@@ -53,7 +53,7 @@ class SignInFragment : Fragment(), Validator.ValidationListener {
         emailEditText = binding.customEmail.editTextDescription
         passwordEditText = binding.customPassword.editTextDescription
 
-        binding.customPassword.textInputLayout.hint = resources.getString(R.string.password_title)
+       // binding.customPassword.textInputLayout.hint = resources.getString(R.string.password_title)
 
 
         binding.btnSignIn.setOnClickListener {
@@ -67,7 +67,6 @@ class SignInFragment : Fragment(), Validator.ValidationListener {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        binding
     }
 
     override fun onValidationSucceeded() {
