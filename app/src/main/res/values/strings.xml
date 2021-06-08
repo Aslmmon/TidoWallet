@@ -42,4 +42,5 @@
     <string name="maximum">Maximum amount is 1000 EGP</string>
     <string name="charge_your_wallet_title">Charge your wallet</string>
     <string name="scan_now_to_buy_title">Click here to begin scanning</string>
+    <string name="no_transactions_yet_title">No Transactions yet</string>
 </resources>

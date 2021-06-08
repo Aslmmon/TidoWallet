@@ -49,12 +49,37 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
+        android:id="@+id/tv_transaction"
         android:fontFamily="@font/tajawal_extra_bold"
         android:text="@string/transaction_history_title"
         android:textColor="@color/colorDark"
         app:layout_constraintStart_toStartOf="@id/card"
         app:layout_constraintTop_toBottomOf="@id/custom_money"
 
+        />
+
+    <ImageView
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_transaction"
+        android:src="@drawable/ic_no_money"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="30dp"
+
+        android:id="@+id/iv_empty"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/no_transactions_yet_title"
+        app:layout_constraintStart_toStartOf="@id/iv_empty"
+        app:layout_constraintTop_toBottomOf="@id/iv_empty"
+        app:layout_constraintEnd_toEndOf="@id/iv_empty"
+        android:layout_marginTop="10dp"
+        android:textColor="@color/colorDark"
+        android:textStyle="italic"
         />
 
 
