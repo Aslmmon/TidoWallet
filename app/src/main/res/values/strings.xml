@@ -39,4 +39,5 @@
     <string name="change_lanugage_title">Change Lanugage</string>
     <string name="add_money_title">Add Money</string>
     <string name="enter_amount_title">Enter amount</string>
+    <string name="maximum">Maximum amount is 1000 EGP</string>
 </resources>

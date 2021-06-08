@@ -22,4 +22,5 @@
     <string name="welcome_title">أهلا</string>
     <string name="login_to_continue_title">تسجيل الدخول</string>
     <string name="create_account_to_continue_title">تسجيل حساب </string>
+    <string name="maximum">أقصى مبلغ هو 1000 ج.م</string>
 </resources>

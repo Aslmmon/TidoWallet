@@ -8,4 +8,6 @@ const val BALANCE_ACCOUNT = "-Balance"
 const val EGP = "EGP"
 const val MAXIMUM_MONEY =1000
 const val VALUE_TO_BE_SEND = "value"
+const val BALANCE_AMOUNT = "balance"
+
 const val ALpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
