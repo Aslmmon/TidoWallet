@@ -1,6 +1,7 @@
 package com.tidow.tidowallet.features.main.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.fragment.app.Fragment
@@ -15,7 +16,11 @@ import com.google.firebase.database.ValueEventListener
 import com.google.firebase.ktx.Firebase
 import com.tidow.tidowallet.R
 import com.tidow.tidowallet.custom.BALANCE_ACCOUNT
+import com.tidow.tidowallet.custom.MAXIMUM_MONEY
+import com.tidow.tidowallet.custom.SPLASH_TIMEOUT
+import com.tidow.tidowallet.custom.VALUE_TO_BE_SEND
 import com.tidow.tidowallet.databinding.FragmentMoneyBinding
+import com.tidow.tidowallet.features.fawry.FawryPaymentActivity
 import com.tidow.tidowallet.model.BalanceAccount
 
 
@@ -49,6 +54,19 @@ class MoneyFragment : Fragment() {
             }
 
         })
+
+        binding.btnWithDraw.setOnClickListener {
+            binding.moneyGroup.visibility = View.VISIBLE
+            //startActivity(Intent(requireContext(), FawryPaymentActivity::class.java))
+        }
+        binding.btnCheck.setOnClickListener {
+            val amount = binding.customMoney.editTextDescription.text.toString()
+            if (amount.toInt() < MAXIMUM_MONEY) {
+                val intent = Intent(requireContext(),FawryPaymentActivity::class.java)
+                intent.putExtra(VALUE_TO_BE_SEND ,amount)
+                startActivity(intent)
+            }
+        }
 
     }
 }

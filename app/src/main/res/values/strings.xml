@@ -37,4 +37,6 @@
     <string name="arabic_title">العربية</string>
     <string name="english_title">English</string>
     <string name="change_lanugage_title">Change Lanugage</string>
+    <string name="add_money_title">Add Money</string>
+    <string name="enter_amount_title">Enter amount</string>
 </resources>
