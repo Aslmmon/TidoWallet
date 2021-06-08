@@ -20,9 +20,4 @@
         android:name="com.tidow.tidowallet.features.main.fragments.SettingsFragment"
         android:label="fragment_settings"
         tools:layout="@layout/fragment_settings" />
-    <fragment
-        android:id="@+id/trans_fragment"
-        android:name="com.tidow.tidowallet.features.main.fragments.TransactionsFragment"
-        android:label="fragment_transactions"
-        tools:layout="@layout/fragment_transactions" />
 </navigation>

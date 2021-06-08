@@ -95,6 +95,7 @@
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/tajawal_medium"
                 android:text="@string/_5000_egp_title"
+                android:id="@+id/tv_balance"
                 android:textColor="@color/black"
                 android:textSize="32sp"
                 android:textStyle="bold"
