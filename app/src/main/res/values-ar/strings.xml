@@ -23,4 +23,24 @@
     <string name="login_to_continue_title">تسجيل الدخول</string>
     <string name="create_account_to_continue_title">تسجيل حساب </string>
     <string name="maximum">أقصى مبلغ هو 1000 ج.م</string>
+    <string name="money">المحفظة</string>
+    <string name="qr_code_title">Qr كود</string>
+    <string name="transactions">المعاملات</string>
+    <string name="settings">الاعدادات</string>
+    <string name="transactions_here_title">المعاملات</string>
+    <string name="settings_title">الاعدادات</string>
+    <string name="current_balance_title">رصيدك الحالي</string>
+    <string name="withdraw_title">سحب</string>
+    <string name="_5000_egp_title">5000 EGP</string>
+    <string name="transaction_history_title">المعاملات السابقة</string>
+    <string name="change_language_title">تغيير اللغة</string>
+    <string name="arabic_title">العربية</string>
+    <string name="english_title">English</string>
+    <string name="change_lanugage_title">تغيير اللغة</string>
+    <string name="add_money_title">أضف مبلغ مالي</string>
+    <string name="enter_amount_title">أدخل المبلغ</string>
+    <string name="charge_your_wallet_title">شحن المحفظة</string>
+    <string name="scan_now_to_buy_title">اضغط هنا لبدأ المسح</string>
+
+
 </resources>

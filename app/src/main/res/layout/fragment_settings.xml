@@ -36,6 +36,7 @@
             android:buttonTint="@color/colorDark"
             android:textColor="@color/colorDark"
             android:text="@string/arabic_title"
+            android:id="@+id/arabic"
             />
         <RadioButton
             android:layout_width="match_parent"
@@ -43,6 +44,7 @@
             android:buttonTint="@color/colorDark"
             android:textColor="@color/colorDark"
             android:text="@string/english_title"
+            android:id="@+id/english"
             />
     </RadioGroup>
 
@@ -53,6 +55,7 @@
         android:layout_height="wrap_content"
         android:text="@string/change_lanugage_title"
         android:textAllCaps="false"
+        android:id="@+id/btn_change_language"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/rd_btn"
         app:layout_constraintEnd_toEndOf="parent"
