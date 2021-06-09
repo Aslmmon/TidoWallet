@@ -83,6 +83,7 @@ dependencies {
 
 
     implementation 'com.budiyev.android:code-scanner:2.1.0'
+    implementation 'com.github.ybq:Android-SpinKit:1.4.0'
 
 
 

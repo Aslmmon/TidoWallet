@@ -30,7 +30,7 @@
     <string name="transactions_here_title">المعاملات</string>
     <string name="settings_title">الاعدادات</string>
     <string name="current_balance_title">رصيدك الحالي</string>
-    <string name="withdraw_title">سحب</string>
+    <string name="withdraw_title">ايداع</string>
     <string name="_5000_egp_title">5000 EGP</string>
     <string name="transaction_history_title">المعاملات السابقة</string>
     <string name="change_language_title">تغيير اللغة</string>

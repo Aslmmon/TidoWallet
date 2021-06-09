@@ -22,12 +22,13 @@ import com.tidow.tidowallet.databinding.FragmentMoneyBinding
 import com.tidow.tidowallet.features.fawry.FawryPaymentActivity
 import com.tidow.tidowallet.model.BalanceAccount
 import com.tidow.tidowallet.showSnackBar
+import com.tidow.tidowallet.startAnimation
 
 
-class MoneyFragment : Fragment() {
+class MoneyFragment : BaseFragment() {
     lateinit var binding: FragmentMoneyBinding
     var firebaseuser = FirebaseAuth.getInstance()
-     var balanceAmount:Int = 0
+    var balanceAmount: Int = 0
     var database = FirebaseDatabase.getInstance().getReference(firebaseuser.uid!! + BALANCE_ACCOUNT)
 
     override fun onCreateView(
@@ -41,24 +42,36 @@ class MoneyFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        showProgress()
+
 
         binding.userNumber.text = firebaseuser.currentUser?.phoneNumber
 
         binding.btnWithDraw.setOnClickListener {
+            if (balanceAmount >= MAXIMUM_MONEY) {
+                showSnackbar()
+                return@setOnClickListener
+            }
             binding.moneyGroup.visibility = View.VISIBLE
             //startActivity(Intent(requireContext(), FawryPaymentActivity::class.java))
         }
         binding.btnCheck.setOnClickListener {
             val amount = binding.customMoney.editTextDescription.text.toString()
             if (amount.toInt() < MAXIMUM_MONEY) {
-                val intent = Intent(requireContext(),FawryPaymentActivity::class.java)
-                intent.putExtra(VALUE_TO_BE_SEND ,amount)
-                intent.putExtra(BALANCE_AMOUNT ,balanceAmount)
-
+                val intent = Intent(requireContext(), FawryPaymentActivity::class.java)
+                intent.putExtra(VALUE_TO_BE_SEND, amount)
+                intent.putExtra(BALANCE_AMOUNT, balanceAmount)
                 startActivity(intent)
-            }else requireActivity().showSnackBar(binding.constraint,resources.getString(R.string.maximum))
+            } else showSnackbar()
         }
 
+    }
+
+    private fun MoneyFragment.showSnackbar() {
+        requireActivity().showSnackBar(
+            binding.constraint,
+            resources.getString(R.string.maximum)
+        )
     }
 
     override fun onResume() {
@@ -68,11 +81,15 @@ class MoneyFragment : Fragment() {
             override fun onDataChange(snapshot: DataSnapshot) {
                 val value = snapshot.getValue(BalanceAccount::class.java)
                 Log.e("firebase", value?.balanceMoney.toString())
+                dismissProgressDialog()
                 balanceAmount = value?.balanceMoney!!
-                binding.tvBalance.text = value.balanceMoney.toString() + " " + value.currency
+                if (context != null) {
+                    requireContext().startAnimation(binding.tvBalance, value)
+                }
             }
 
             override fun onCancelled(error: DatabaseError) {
+                dismissProgressDialog()
                 Log.e("firebase", error.message.toString())
             }
 

@@ -63,7 +63,7 @@
 
     <com.google.android.material.button.MaterialButton
         android:layout_width="0dp"
-        android:layout_margin="50dp"
+        android:layout_margin="20dp"
         android:layout_height="wrap_content"
         android:text="@string/sign_out_title"
         android:textAllCaps="false"
