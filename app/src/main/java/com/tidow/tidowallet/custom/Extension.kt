@@ -3,9 +3,11 @@ package com.tidow.tidowallet
 import android.animation.ValueAnimator
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.pm.PackageManager
 import android.content.res.Configuration
 import android.view.View
 import android.widget.TextView
+import androidx.core.content.ContextCompat
 import com.google.android.material.snackbar.Snackbar
 import com.tidow.tidowallet.model.BalanceAccount
 import java.util.*
@@ -32,4 +34,12 @@ fun Context.startAnimation(textView: TextView, balanceAccount: BalanceAccount) {
         textView.text = animation.animatedValue.toString() + " " + balanceAccount.currency
     }
     animator.start()
+}
+
+fun Context.allPermissionGranted(permissions:Array<String>): Boolean{
+    permissions.forEach {
+        if(ContextCompat.checkSelfPermission(this,it) != PackageManager.PERMISSION_GRANTED)
+            return false;
+    }
+    return true;
 }

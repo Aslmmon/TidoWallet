@@ -16,6 +16,7 @@ import com.google.firebase.auth.*
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.tidow.tidowallet.R
+import com.tidow.tidowallet.custom.BaseFragment
 import com.tidow.tidowallet.custom.TOKEN
 import com.tidow.tidowallet.custom.VERIFICATION_CODE
 import com.tidow.tidowallet.databinding.FragmentMobileChooserBinding
@@ -23,7 +24,7 @@ import org.koin.android.ext.android.inject
 import java.util.concurrent.TimeUnit
 
 
-class MobileChooserFragment : Fragment() {
+class MobileChooserFragment : BaseFragment() {
 
     lateinit var binding: FragmentMobileChooserBinding
     lateinit var firebaseAuth: FirebaseAuth
@@ -54,7 +55,9 @@ class MobileChooserFragment : Fragment() {
                 binding.customMobileNumber.editTextDescription.error = resources.getString(R.string.enter_mobile)
                 return@setOnClickListener
             }
-            binding.progres.visibility = View.VISIBLE
+//            binding.progres.visibility = View.VISIBLE
+
+            showProgress()
 
             val mobileNumber = "+2${mobileNumberEnterd}"
 
@@ -77,6 +80,7 @@ class MobileChooserFragment : Fragment() {
                     }
 
                     override fun onVerificationFailed(firebaseExcption: FirebaseException) {
+                        dismissProgressDialog()
                         Log.i("firebase", "onVerificationFailed:${firebaseExcption.message}")
                         if (firebaseExcption is FirebaseAuthInvalidCredentialsException) {
                             Log.i("firebase", "invalid Request")
@@ -90,7 +94,7 @@ class MobileChooserFragment : Fragment() {
                             token: PhoneAuthProvider.ForceResendingToken
                     ) {
                         super.onCodeSent(verificationId, token)
-                        binding.progres.visibility = View.GONE
+                        dismissProgressDialog()
                         sharedPrefrenceEditor.putString(VERIFICATION_CODE, verificationId).apply()
                         sharedPrefrenceEditor.putString(TOKEN, token.toString()).apply()
                         findNavController().navigate(R.id.goToVerify)

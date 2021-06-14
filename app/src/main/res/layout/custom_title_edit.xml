@@ -29,6 +29,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="10dp"
         android:id="@+id/ed_data"
+        android:textAlignment="viewStart"
         android:textColor="@color/colorPrimary"
         android:layout_height="wrap_content"
         android:padding="10dp"

@@ -33,5 +33,7 @@
         app:labelVisibilityMode="labeled"
         app:itemRippleColor="@null"
         android:background="@color/white"
-        app:menu="@menu/bottom_nav_menu" />
+        app:menu="@menu/bottom_nav_menu"
+
+        />
 </androidx.constraintlayout.widget.ConstraintLayout>

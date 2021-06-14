@@ -14,10 +14,7 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import com.tidow.tidowallet.R
-import com.tidow.tidowallet.custom.ALpha
-import com.tidow.tidowallet.custom.BALANCE_ACCOUNT
-import com.tidow.tidowallet.custom.BALANCE_AMOUNT
-import com.tidow.tidowallet.custom.VALUE_TO_BE_SEND
+import com.tidow.tidowallet.custom.*
 import com.tidow.tidowallet.model.BalanceAccount
 import java.util.*
 
@@ -49,8 +46,8 @@ class FawryPaymentActivity : AppCompatActivity(R.layout.fawry_layout) {
         items = ArrayList()
         (items as ArrayList<PayableItem>).add(payableItem as BillItem)
         FawryPluginAppClass.skipCustomerInput = true
-        FawryPluginAppClass.username = firebaseAuth.currentUser?.phoneNumber ?: "01094105667"
-        FawryPluginAppClass.email = firebaseAuth.currentUser?.email ?: "aslmmon993@gmail.com"
+        FawryPluginAppClass.username = "01094105667"
+        FawryPluginAppClass.email = "aslmmon993@gmail.com"
 
         initializeFawry()
         FawrySdk.startPaymentActivity(this)
@@ -59,6 +56,7 @@ class FawryPaymentActivity : AppCompatActivity(R.layout.fawry_layout) {
     private fun initFirebase() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference(firebaseAuth.uid!! + BALANCE_ACCOUNT)
+
     }
 
     private fun initializeFawry() {

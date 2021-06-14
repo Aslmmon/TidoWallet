@@ -41,6 +41,8 @@
     <string name="enter_amount_title">أدخل المبلغ</string>
     <string name="charge_your_wallet_title">شحن المحفظة</string>
     <string name="scan_now_to_buy_title">اضغط هنا لبدأ المسح</string>
+    <string name="no_transactions_yet_title">لا توجد معاملات حالية</string>
+    <string name="not_allowed">You don\'t have enough Mony to complete transaction</string>
 
 
 </resources>

@@ -37,7 +37,7 @@
         android:layout_marginStart="10dp"
         android:id="@+id/user_number"
         android:fontFamily="@font/tajawal_bold"
-        android:text="01094105667"
+        tools:text="01094105667"
         android:textColor="@color/colorDark"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="@id/tv_welcome"
@@ -66,7 +66,6 @@
         android:src="@drawable/ic_no_money"
         app:layout_constraintEnd_toEndOf="parent"
         android:layout_marginTop="30dp"
-
         android:id="@+id/iv_empty"
         />
 
@@ -80,8 +79,31 @@
         android:layout_marginTop="10dp"
         android:textColor="@color/colorDark"
         android:textStyle="italic"
+        android:id="@+id/no_transctions_tv"
         />
 
+    <androidx.constraintlayout.widget.Group
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/empty_group"
+        app:constraint_referenced_ids="no_transctions_tv,iv_empty"
+        />
+
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:overScrollMode="never"
+        android:id="@+id/rv_transactions"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:itemCount="3"
+        tools:listitem="@layout/transaction_item"
+        app:layout_constraintStart_toStartOf="@id/tv_transaction"
+        app:layout_constraintTop_toBottomOf="@id/tv_transaction"
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card"
@@ -122,7 +144,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="20dp"
                 android:fontFamily="@font/tajawal_medium"
-                android:text="@string/_5000_egp_title"
+                tools:text="@string/_5000_egp_title"
                 android:textColor="@color/black"
                 android:textSize="32sp"
                 android:textStyle="bold"

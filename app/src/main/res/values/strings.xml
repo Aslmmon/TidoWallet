@@ -43,4 +43,9 @@
     <string name="charge_your_wallet_title">Charge your wallet</string>
     <string name="scan_now_to_buy_title">Click here to begin scanning</string>
     <string name="no_transactions_yet_title">No Transactions yet</string>
+    <string name="buy_item">Are you sure you want to Buy this Item?</string>
+    <string name="buy_item_title">Buy Item</string>
+    <string name="egp">EGP</string>
+
+    <string name="not_allowed">You don\'t have enough Mony to complete transaction</string>
 </resources>
