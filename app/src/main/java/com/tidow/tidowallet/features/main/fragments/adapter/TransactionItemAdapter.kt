@@ -1,6 +1,7 @@
 package com.tidow.tidowallet.features.main.fragments.adapter
 
 import android.annotation.SuppressLint
+import android.os.Build
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -10,6 +11,9 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.tidow.tidowallet.R
 import com.tidow.tidowallet.features.main.fragments.QrCodeFragment
+import java.text.SimpleDateFormat
+import java.time.Instant
+import java.util.*
 
 class TransactionItemAdapter(private val onItemClickOfProduct: OnItemClickOfProduct? = null) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
@@ -64,6 +68,9 @@ class TransactionItemAdapter(private val onItemClickOfProduct: OnItemClickOfProd
         fun bind(data: QrCodeFragment.TransactionItem) = with(itemView) {
             findViewById<TextView>(R.id.tv_cost).text =
                 data.pricePaid.toString() + " " + resources.getString(R.string.egp)
+            findViewById<TextView>(R.id.tv_store_name).text = data.storeName.toString()
+            findViewById<TextView>(R.id.tv_date).text = SimpleDateFormat("yyyy.MM.dd  HH:mm").format(data.date?.time)
+
 
         }
     }

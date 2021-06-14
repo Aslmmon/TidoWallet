@@ -8,6 +8,7 @@ import android.net.Uri
 import android.os.Build
 import android.os.Bundle
 import android.preference.PreferenceManager
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,11 +18,10 @@ import com.budiyev.android.codescanner.*
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
+import com.google.zxing.Result
 import com.tidow.tidowallet.R
 import com.tidow.tidowallet.allPermissionGranted
-import com.tidow.tidowallet.custom.ACCOUNT_BALANCE
-import com.tidow.tidowallet.custom.BALANCE_ACCOUNT
-import com.tidow.tidowallet.custom.TRANSACTIONS_ACCOUNT
+import com.tidow.tidowallet.custom.*
 import com.tidow.tidowallet.databinding.FragmentQrCodeBinding
 import com.tidow.tidowallet.model.BalanceAccount
 import com.tidow.tidowallet.showSnackBar
@@ -58,29 +58,36 @@ class QrCodeFragment : Fragment() {
         codeScanner.decodeCallback = DecodeCallback {
             requireActivity().runOnUiThread {
                 when (true) {
-                    it.text.toLowerCase().startsWith("http:") -> Toast.makeText(requireContext(), "Scan result: url", Toast.LENGTH_LONG).show()
-                    it.text.toLowerCase().startsWith("mailto:") -> Toast.makeText(
+                    it.text.toLowerCase(Locale.ROOT).startsWith("http:") -> {
+                        val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(it.text))
+                        startActivity(browserIntent)
+                    }
+
+                    it.text.toLowerCase(Locale.ROOT).startsWith("mailto:") -> Toast.makeText(
                         requireContext(),
                         "Scan result: mail",
                         Toast.LENGTH_LONG
                     ).show()
 
-                    it.text.toLowerCase(Locale.ROOT).startsWith("tel:") -> Toast.makeText(requireContext(), "Scan result: telephone", Toast.LENGTH_LONG).show()
+                    it.text.toLowerCase(Locale.ROOT).startsWith("tel:") -> Toast.makeText(
+                        requireContext(),
+                        "Scan result: telephone",
+                        Toast.LENGTH_LONG
+                    ).show()
 
                     it.text.toLowerCase(Locale.ROOT).startsWith("geo:") ->
-                        Toast.makeText(requireContext(), "Scan result: geo", Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), "Scan result: geo", Toast.LENGTH_LONG)
+                            .show()
 
                     it.text.toLowerCase(Locale.ROOT).startsWith("WIFI:") ->
-                        Toast.makeText(requireContext(), "Scan result: wifi", Toast.LENGTH_LONG).show()
+                        Toast.makeText(requireContext(), "Scan result: wifi", Toast.LENGTH_LONG)
+                            .show()
 
 
-                    else ->{
+                    else -> {
 //                        Toast.makeText(requireContext(), "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
-//                        showDialogWithPrice(it.text)
+                        if (checkIfStringContainPrice(it)) showDialogWithPrice(it.text)
 
-                        val browserIntent =
-                            Intent(Intent.ACTION_VIEW, Uri.parse(it.text))
-                        startActivity(browserIntent)
 
                     }
                 }
@@ -109,6 +116,11 @@ class QrCodeFragment : Fragment() {
 
     }
 
+    private fun checkIfStringContainPrice(it: Result) =
+        it.text.contains(PRICE, ignoreCase = true) && it.text.contains(
+            STORE, ignoreCase = true
+        )
+
     private fun initQrCodeScanner() {
         codeScanner = CodeScanner(requireContext(), binding.scannerView)
         codeScanner.camera = CodeScanner.CAMERA_BACK // or CAMERA_FRONT or specific camera id
@@ -126,20 +138,30 @@ class QrCodeFragment : Fragment() {
             // The dialog is automatically dismissed when a dialog button is clicked.
             .setPositiveButton(android.R.string.yes,
                 DialogInterface.OnClickListener { dialog, which ->
-                    // Continue with delete operation
+                    val price = text?.substringAfter(":")?.substringBefore("&")
+                    val store = text?.substringAfterLast(":")
+                    Log.i("data", price.toString())
+                    Log.i("data", store.toString())
                     val preferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
-
-                    val accountBalance=preferences.getInt(ACCOUNT_BALANCE,0)
-                    if (accountBalance != 0){
-                        val amountToPay = text?.toInt()!!
-                        if (amountToPay > accountBalance){
+                    val accountBalance = preferences.getInt(ACCOUNT_BALANCE, 0)
+                    if (accountBalance != 0) {
+                        val amountToPay = price?.toInt()!!
+                        if (amountToPay > accountBalance) {
                             showErrorMessage()
                             return@OnClickListener
                         }
-                        val totalCount = accountBalance  - amountToPay
+                        val totalCount = accountBalance - amountToPay
                         database.setValue(BalanceAccount(totalCount))
-                        transactionsDatabase.push().setValue(TransactionItem(pricePaid = amountToPay))
-                    }else{
+
+                        transactionsDatabase.push().setValue(
+                            TransactionItem(
+                                pricePaid = price.toInt(),
+                                storeName = store,
+                                date = Calendar.getInstance().time
+                            )
+                        )
+                        codeScanner.startPreview()
+                    } else {
                         showErrorMessage()
                     }
                 }) // A null listener allows the button to dismiss the dialog and take no further action.
@@ -180,9 +202,14 @@ class QrCodeFragment : Fragment() {
     private fun initFirebase() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference(firebaseAuth.uid!! + BALANCE_ACCOUNT)
-        transactionsDatabase = FirebaseDatabase.getInstance().getReference(firebaseAuth.uid!! + TRANSACTIONS_ACCOUNT).child("transactins")
+        transactionsDatabase =
+            FirebaseDatabase.getInstance().getReference(firebaseAuth.uid!! + TRANSACTIONS_ACCOUNT).child("transactins")
 
     }
 
-    data class TransactionItem(var pricePaid:Int?=null)
+    data class TransactionItem(
+        var pricePaid: Int? = null,
+        var storeName: String? = null,
+        var date: Date?=null
+    )
 }

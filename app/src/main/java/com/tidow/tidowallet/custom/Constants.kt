@@ -19,3 +19,6 @@ const val LANGUAGE = "shared_prefrence"
 
 const val ACCOUNT_BALANCE = "ACCOUNT_BALANCE"
 const val ALpha = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+
+const val PRICE ="price:"
+const val STORE = "store:"

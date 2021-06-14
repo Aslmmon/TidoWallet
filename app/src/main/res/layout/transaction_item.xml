@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_margin="5dp"
     app:cardCornerRadius="20dp"
     app:cardElevation="10dp">
@@ -28,7 +29,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Chisto"
+            tools:text="Chisto"
             android:id="@+id/tv_store_name"
             android:textColor="@color/colorLight"
             app:layout_constraintStart_toEndOf="@id/iv_person"
@@ -41,7 +42,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="26 May 2019"
+            tools:text="26 May 2019"
             android:id="@+id/tv_date"
             android:layout_marginTop="10dp"
             app:layout_constraintStart_toStartOf="@id/tv_store_name"
@@ -53,7 +54,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/tajawal_extra_bold"
-            android:text="200 EGP"
+            tools:text="200 EGP"
             android:textColor="@color/colorDark"
             android:textSize="18sp"
             android:textStyle="bold"
