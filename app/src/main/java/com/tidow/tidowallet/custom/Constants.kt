@@ -9,7 +9,7 @@ const val BALANCE_ACCOUNT = "-Balance"
 const val TRANSACTIONS_ACCOUNT = "-Transactions"
 
 const val EGP = "EGP"
-const val MAXIMUM_MONEY =1000
+const val MAXIMUM_MONEY =100000
 const val VALUE_TO_BE_SEND = "value"
 const val BALANCE_AMOUNT = "balance"
 const val ARABIC= "ar"

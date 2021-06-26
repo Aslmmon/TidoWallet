@@ -30,7 +30,9 @@ class MoneyFragment : BaseFragment() {
     var balanceAmount: Int = 0
     var transactionItemAdapter = TransactionItemAdapter()
     var database = FirebaseDatabase.getInstance().getReference(firebaseuser.uid!! + BALANCE_ACCOUNT)
-    var transactionsDb = FirebaseDatabase.getInstance().getReference(firebaseuser.uid!! + TRANSACTIONS_ACCOUNT).child("transactins")
+    var transactionsDb =
+        FirebaseDatabase.getInstance().getReference(firebaseuser.uid!! + TRANSACTIONS_ACCOUNT)
+            .child("transactins")
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -46,8 +48,12 @@ class MoneyFragment : BaseFragment() {
         showProgress()
         binding.rvTransactions.adapter = transactionItemAdapter
 
-
-        binding.userNumber.text = firebaseuser.currentUser?.phoneNumber
+        if (firebaseuser.currentUser?.email.isNullOrEmpty()) binding.userNumber.text =
+            firebaseuser.currentUser?.phoneNumber
+        else binding.userNumber.text =
+            firebaseuser.currentUser?.email ?: firebaseuser.currentUser?.phoneNumber
+        Log.i("user", firebaseuser.currentUser?.email.toString())
+        Log.i("user", firebaseuser.currentUser?.phoneNumber.toString())
 
         binding.btnWithDraw.setOnClickListener {
             if (checkForBalance()) return@setOnClickListener

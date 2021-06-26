@@ -64,12 +64,12 @@ class TransactionItemAdapter(private val onItemClickOfProduct: OnItemClickOfProd
         itemView: View
     ) : RecyclerView.ViewHolder(itemView) {
 
-        @SuppressLint("SetTextI18n")
+        @SuppressLint("SetTextI18n", "SimpleDateFormat")
         fun bind(data: QrCodeFragment.TransactionItem) = with(itemView) {
             findViewById<TextView>(R.id.tv_cost).text =
                 data.pricePaid.toString() + " " + resources.getString(R.string.egp)
             findViewById<TextView>(R.id.tv_store_name).text = data.storeName.toString()
-            findViewById<TextView>(R.id.tv_date).text = SimpleDateFormat("yyyy.MM.dd  HH:mm").format(data.date?.time)
+            if (data.date?.time != null) findViewById<TextView>(R.id.tv_date).text = SimpleDateFormat("yyyy.MM.dd  HH:mm").format(data.date?.time)
 
 
         }

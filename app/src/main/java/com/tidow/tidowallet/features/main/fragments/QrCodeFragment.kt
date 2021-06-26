@@ -85,8 +85,17 @@ class QrCodeFragment : Fragment() {
 
 
                     else -> {
-//                        Toast.makeText(requireContext(), "Scan result: ${it.text}", Toast.LENGTH_LONG).show()
-                        if (checkIfStringContainPrice(it)) showDialogWithPrice(it.text)
+                        try {
+                            if (checkIfStringContainPrice(it)) showDialogWithPrice(it.text)
+
+                        } catch (e: Exception) {
+                            Toast.makeText(
+                                requireContext(),
+                                "Scan result: ${it.text} and check Your QRCode again",
+                                Toast.LENGTH_LONG
+                            ).show()
+
+                        }
 
 
                     }
@@ -132,17 +141,19 @@ class QrCodeFragment : Fragment() {
     }
 
     private fun showDialogWithPrice(text: String?) {
+        val price = text?.substringAfter(":")?.substringBefore("&")
+        val store = text?.substringAfterLast(":")
         AlertDialog.Builder(context)
             .setTitle(getString(R.string.buy_item_title))
-            .setMessage(getString(R.string.buy_item)) // Specifying a listener allows you to take an action before dismissing the dialog.
+            .setMessage(getString(R.string.buy_item) + " for $price ?") // Specifying a listener allows you to take an action before dismissing the dialog.
             // The dialog is automatically dismissed when a dialog button is clicked.
             .setPositiveButton(android.R.string.yes,
                 DialogInterface.OnClickListener { dialog, which ->
-                    val price = text?.substringAfter(":")?.substringBefore("&")
-                    val store = text?.substringAfterLast(":")
+
                     Log.i("data", price.toString())
                     Log.i("data", store.toString())
-                    val preferences = PreferenceManager.getDefaultSharedPreferences(requireContext())
+                    val preferences =
+                        PreferenceManager.getDefaultSharedPreferences(requireContext())
                     val accountBalance = preferences.getInt(ACCOUNT_BALANCE, 0)
                     if (accountBalance != 0) {
                         val amountToPay = price?.toInt()!!
@@ -160,7 +171,7 @@ class QrCodeFragment : Fragment() {
                                 date = Calendar.getInstance().time
                             )
                         )
-                        codeScanner.startPreview()
+                       // codeScanner.startPreview()
                     } else {
                         showErrorMessage()
                     }
@@ -203,13 +214,14 @@ class QrCodeFragment : Fragment() {
         firebaseAuth = FirebaseAuth.getInstance()
         database = FirebaseDatabase.getInstance().getReference(firebaseAuth.uid!! + BALANCE_ACCOUNT)
         transactionsDatabase =
-            FirebaseDatabase.getInstance().getReference(firebaseAuth.uid!! + TRANSACTIONS_ACCOUNT).child("transactins")
+            FirebaseDatabase.getInstance().getReference(firebaseAuth.uid!! + TRANSACTIONS_ACCOUNT)
+                .child("transactins")
 
     }
 
     data class TransactionItem(
         var pricePaid: Int? = null,
         var storeName: String? = null,
-        var date: Date?=null
+        var date: Date? = null
     )
 }

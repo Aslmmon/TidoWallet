@@ -17,7 +17,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-        if (Firebase.auth.currentUser?.email != null){
+        if (!Firebase.auth.currentUser?.email.isNullOrEmpty()){
             Log.i("firebase","${Firebase.auth.currentUser?.email}")
             Log.i("firebase","${Firebase.auth.currentUser?.isEmailVerified}")
 
