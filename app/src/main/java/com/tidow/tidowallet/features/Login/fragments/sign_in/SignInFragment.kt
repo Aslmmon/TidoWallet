@@ -1,15 +1,17 @@
 package com.tidow.tidowallet.features.Login.fragments.sign_in
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.EditText
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.google.firebase.auth.FirebaseAuthException
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import com.mobsandgeeks.saripaar.ValidationError
@@ -87,6 +89,10 @@ class SignInFragment : Fragment(), Validator.ValidationListener {
                         "Authentication failed.",
                         Toast.LENGTH_SHORT
                     ).show()
+                }
+            }.addOnFailureListener {
+                if (it is FirebaseAuthException){
+                    throw  RuntimeException("This is a crash");
                 }
             }
     }
